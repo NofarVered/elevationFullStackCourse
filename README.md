@@ -1,6 +1,7 @@
 # elevationFullStackCourse
 ### TO DO-
-update functions file
+update functions file.
+
 do domintro ex
 ### Do over again
 
