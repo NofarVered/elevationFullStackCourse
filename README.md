@@ -1,5 +1,7 @@
 # elevationFullStackCourse
-
+### TO DO-
+update functions file
+do domintro ex
 ### Do over again
 
 1. css positioning
