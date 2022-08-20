@@ -1,6 +1,6 @@
 # elevationFullStackCourse
 
-### do over again
+### Do over again
 
 1. css positioning
 2. css positioning exercises
