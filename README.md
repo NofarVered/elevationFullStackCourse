@@ -2,6 +2,9 @@
 
 ### Do over again
 
+add functions to the file
+add domintro to do
+
 1. css positioning
 2. css positioning exercises
 3. css grid
