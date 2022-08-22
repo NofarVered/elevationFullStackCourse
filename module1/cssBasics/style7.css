@@ -1,0 +1,30 @@
+#first{
+    display: inline-block;
+
+    background-color: green;
+
+}
+#second{
+    display: inline-block;
+
+    background-color: orange;
+
+
+}
+.box{
+        height: 50px;
+    width: 50px;
+    border-color: black;
+    border-style: groove;
+    border-width: 4px;
+  
+}
+.button{
+    background-color: lightgreen;
+    border-color: lightgreen;
+
+
+}
+#container{
+    background-color: gray;
+}
