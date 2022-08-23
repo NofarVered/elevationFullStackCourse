@@ -1,11 +1,11 @@
-const factory = function () {
+const util = function () {
   let DATA = []; // STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
 
   // Adding a post by a given string.
   const addPost = function (str) {
     try {
       DATA.push({
-        key: "p" + Math.floor(Math.random() * 100),
+        key: "p" + Math.random(),
         text: str,
         comments: [],
       });
@@ -18,7 +18,7 @@ const factory = function () {
   const removePost = function (curKey) {
     try {
       DATA.forEach((item, index) => {
-        item.key == curKey ? DATA.splice(index) : null;
+        item.key == curKey ? DATA.splice(index, 1) : null;
       });
     } catch (error) {
       console.error(error);
@@ -31,7 +31,7 @@ const factory = function () {
       DATA.forEach((item) => {
         item.key == postKey
           ? item.comments.push({
-              key: "c" + Math.floor(Math.random() * 100),
+              key: "c" + Math.random(),
               text: str,
             })
           : null;
@@ -46,8 +46,8 @@ const factory = function () {
     try {
       DATA.forEach((item) => {
         item.key == postKey
-          ? item.comments.forEach((item, index) => {
-              item.key == commentKey ? item.splice(index) : null;
+          ? item.comments.forEach((com, index) => {
+              com.key == commentKey ? item.comments.splice(index, 1) : null;
             })
           : null;
       });
@@ -57,7 +57,7 @@ const factory = function () {
   };
 
   // print data
-  const getPosts = function () {
+  const getData = function () {
     try {
       console.log(DATA);
     } catch (error) {
@@ -70,6 +70,8 @@ const factory = function () {
     addComment: addComment,
     removePost: removePost,
     removeComment: removeComment,
-    getPosts: getPosts,
+    getData: getData,
   };
 };
+
+const factory = util();
