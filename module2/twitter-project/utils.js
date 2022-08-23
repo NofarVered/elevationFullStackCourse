@@ -1,4 +1,4 @@
-const util = function () {
+const logic = function () {
   let DATA = []; // STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
 
   // Adding a post by a given string.
@@ -74,4 +74,21 @@ const util = function () {
   };
 };
 
-const factory = util();
+const factory = logic();
+
+// STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
+const renderPosts = function (DATA) {
+  // append posts:
+};
+
+let postCopy = $(`<div class="postBox" id="${post.key}">
+<div class="textPostBox">
+  <p>${post.text}</p>
+</div>
+<div class="commentsPostBox"></div>
+<div class="buttonsPostBox">
+  <button>Delete Post</button>
+  <button>Add Comment</button>
+</div>
+</div>;
+`);
