@@ -79,6 +79,7 @@ const factory = logic();
 // STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
 const renderPosts = function (DATA) {
   // append posts:
+  DATA;
 };
 
 let postCopy = $(`<div class="postBox" id="${post.key}">

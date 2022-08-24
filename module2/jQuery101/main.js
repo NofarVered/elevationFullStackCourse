@@ -16,7 +16,7 @@
 
 // $("#my-input").val("element");
 
-// const output = $("h1").data().barcode;
+0; // const output = $("h1").data().barcode;
 // const output2 = $("h1").data().expirationdate;
 
 // console.log(output);
