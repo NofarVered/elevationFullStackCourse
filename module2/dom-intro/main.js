@@ -46,23 +46,17 @@ const addItem = function () {
 
 //15. Exercises:
 //Completing the Game
-
-// ASK ???????
 let arr = document.querySelectorAll(".arrow");
 for (i = 0; i < arr.length; i++) {
   arr[i].addEventListener("click", function () {
     const ball = document.getElementById("ball");
     const dir = this.id;
-    console.log(this);
-    if (dir == "left") {
-      let move = parseInt(ball.style.left) || 0;
+    let move = parseInt(ball.style[dir]) || 0;
+    if (dir == "top" || dir == "right") {
       move += 15;
-      ball.style.left = move + "px";
-    }
-    if (dir == "right") {
-      let move = parseInt(ball.style.right) || 0;
+    } else {
       move += 15;
-      ball.style.right = move + "px";
     }
+    ball.style[dir] = move + "px";
   });
 }

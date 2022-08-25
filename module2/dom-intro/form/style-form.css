@@ -24,13 +24,14 @@
     font-weight: 500;
     }
     form {
+    display: block;
     position: relative;
     width: 80%;
     border-radius: 30px;
     background: #fff;
     }
-    .form-left-decoration,
-    .form-right-decoration {
+    /* .form-left-decoration, */
+    /* .form-right-decoration {
     content: "";
     position: absolute;
     width: 50px;
@@ -45,8 +46,8 @@
     .form-right-decoration {
     top: 60px;
     right: -30px;
-    }
-    .form-left-decoration:before,
+    } */
+    /* .form-left-decoration:before,
     .form-left-decoration:after,
     .form-right-decoration:before,
     .form-right-decoration:after {
@@ -80,7 +81,7 @@
     height: 20px;
     border-radius: 50%;
     background: #fff;
-    }
+    } */
     .form-inner {
     padding: 40px;
     }
@@ -98,6 +99,7 @@
     resize: none;
     }
     button {
+    display: block;
     width: 100%;
     padding: 10px;
     margin-top: 20px;
@@ -112,8 +114,8 @@
     button:hover {
     background: #cae6a0;
     } 
-    @media (min-width: 568px) {
+    /* @media (min-width: 568px) {
     form {
     width: 60%;
-    }
-    }
+    } */
+    
