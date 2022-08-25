@@ -52,10 +52,12 @@ for (i = 0; i < arr.length; i++) {
     const ball = document.getElementById("ball");
     const dir = this.id;
     let move = parseInt(ball.style[dir]) || 0;
+    console.log(dir);
+    dir == "up" ? dir == "top" : null;
     if (dir == "top" || dir == "right") {
-      move += 15;
-    } else {
       move -= 15;
+    } else {
+      move += 15;
     }
     ball.style[dir] = move + "px";
   });
