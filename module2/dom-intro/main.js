@@ -55,7 +55,7 @@ for (i = 0; i < arr.length; i++) {
     if (dir == "top" || dir == "right") {
       move += 15;
     } else {
-      move += 15;
+      move -= 15;
     }
     ball.style[dir] = move + "px";
   });
