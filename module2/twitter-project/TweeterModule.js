@@ -8,17 +8,6 @@ const TweeterModule = function () {
         { id: "c2", text: "Second comment on first post!!" },
       ],
     },
-    {
-      text: "Second post!",
-      id: "p2",
-      comments: [
-        {
-          id: "c4",
-          text: "First comment on second post!",
-        },
-        { id: "c5", text: "Second comment on second post!" },
-      ],
-    },
   ]; // STRUCT --> [{id: "", text: "", comments: [{id:"", text:""}, ....]}, ...]
 
   // Adding a post by a given string.
