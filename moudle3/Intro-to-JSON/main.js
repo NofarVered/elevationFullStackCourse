@@ -49,5 +49,3 @@ console.log(
 console.log(recipe.healthy); //should print true
 console.log(recipe.calories); //should print 250
 console.log(recipe.directions[0]); //should print "Cut potatoes into half inch thick slices"
-
-// 3 + 4
