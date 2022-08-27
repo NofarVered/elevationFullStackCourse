@@ -52,7 +52,12 @@ body{
 }
 
 .post-text{
+    font-size: 22px;
     font-weight: bold;
+}
+
+.comment-text{
+    font-size: 20px;
 }
 
 .comments{

@@ -6,19 +6,17 @@ const TweeterModule = function () {
       comments: [
         { id: "c1", text: "First comment on first post!" },
         { id: "c2", text: "Second comment on first post!!" },
-        { id: "c3", text: "Third comment on first post!!!" },
       ],
     },
     {
-      text: "Aw man, I wanted to be first",
+      text: "Second post!",
       key: "p2",
       comments: [
         {
           id: "c4",
-          text: "Don't wory second poster, you'll be first one day.",
+          text: "First comment on second post!",
         },
-        { id: "c5", text: "Yeah, believe in yourself!" },
-        { id: "c6", text: "Haha second place what a joke." },
+        { id: "c5", text: "Second comment on second post!" },
       ],
     },
   ]; // STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
