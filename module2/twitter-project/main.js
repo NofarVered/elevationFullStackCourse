@@ -15,6 +15,7 @@ $("#posts").on("click", ".add", function () {
   tweeter.addComment(postId, commentText);
   render.renderPosts(tweeter.getPosts());
   $("#comment-input").val("");
+  console.log(tweeter.getPosts());
 });
 
 $("#posts").on("click", ".delete-comment", function () {
@@ -24,4 +25,12 @@ $("#posts").on("click", ".delete-comment", function () {
   console.log(postId);
   tweeter.removeComment(postId, commentId);
   render.renderPosts(tweeter.getPosts());
+});
+
+$("#post").on("click", function () {
+  let postText = $("#post-input").val();
+  tweeter.addPost(postText);
+  render.renderPosts(tweeter.getPosts());
+  $("#post-input").val("");
+  console.log(tweeter.getPosts());
 });

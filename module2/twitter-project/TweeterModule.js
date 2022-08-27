@@ -2,7 +2,7 @@ const TweeterModule = function () {
   let DATA = [
     {
       text: "First post!",
-      key: "p1",
+      id: "p1",
       comments: [
         { id: "c1", text: "First comment on first post!" },
         { id: "c2", text: "Second comment on first post!!" },
@@ -10,7 +10,7 @@ const TweeterModule = function () {
     },
     {
       text: "Second post!",
-      key: "p2",
+      id: "p2",
       comments: [
         {
           id: "c4",
@@ -19,13 +19,13 @@ const TweeterModule = function () {
         { id: "c5", text: "Second comment on second post!" },
       ],
     },
-  ]; // STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
+  ]; // STRUCT --> [{id: "", text: "", comments: [{id:"", text:""}, ....]}, ...]
 
   // Adding a post by a given string.
   const addPost = function (str) {
     try {
       DATA.push({
-        key: "p" + Math.random(),
+        id: "p" + Math.random(),
         text: str,
         comments: [],
       });
@@ -38,7 +38,7 @@ const TweeterModule = function () {
   const removePost = function (curKey) {
     try {
       DATA.forEach((item, index) => {
-        item.key == curKey ? DATA.splice(index, 1) : null;
+        item.id == curKey ? DATA.splice(index, 1) : null;
       });
     } catch (error) {
       console.error(error);
@@ -49,9 +49,9 @@ const TweeterModule = function () {
   const addComment = function (postKey, str) {
     try {
       DATA.forEach((item) => {
-        item.key == postKey
+        item.id == postKey
           ? item.comments.push({
-              key: "c" + Math.random(),
+              id: "c" + Math.random(),
               text: str,
             })
           : null;
@@ -66,9 +66,9 @@ const TweeterModule = function () {
     console.log("hello");
     try {
       DATA.forEach((item) => {
-        item.key == postKey
+        item.id == postKey
           ? item.comments.forEach((com, index) => {
-              com.key == commentKey ? item.comments.splice(index, 1) : null;
+              com.id == commentKey ? item.comments.splice(index, 1) : null;
             })
           : null;
       });
