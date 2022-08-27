@@ -63,6 +63,7 @@ const TweeterModule = function () {
 
   // Remove a comment in place.
   const removeComment = function (postKey, commentKey) {
+    console.log("hello");
     try {
       DATA.forEach((item) => {
         item.key == postKey

@@ -19,19 +19,20 @@
 
       <script id="post-template" type="text/x-handlebars-template">
             {{#each DATA}}
-              <div class=post data-id={{id}}>
-                <p class=post-text> {{text}} </p>
-                <div class=comments>
-                {{#each comments}}  
-                <div style="display: flex;" data-id={{id}}>
-                    <button class=delete-comment> X </button>
-                    <p class=comment-text> {{text}} </p>
+              <div class="post" data-id={{key}}>
+                <button class="delete">X</button>
+                <p class="post-text"> {{text}} </p>
+                <div class="comments">
+                  {{#each comments}}  
+                    <div style="display: flex;" data-id={{id}}>
+                        <button class="delete-comment"> X </button>
+                        <p class="comment-text"> {{text}} </p>
+                    </div>
+                  {{/each}}
+                  <button class="add">Add Comment</button>
+                  <input class="comment-input" type=text placeholder="Write your comments here">  
                 </div>
-                {{/each}}
-                </div>
-                <button class=delete>Delete Post</button>
-                <button class=add>Add Comment</button>
-              </div>`
+              </div>
             {{/each}}
       </script>  
 
