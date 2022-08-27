@@ -70,7 +70,19 @@ body{
     font-size: 0.8em;
 }
 
+.add{
+    cursor: pointer;
+    color: #ecf0f1;
+    background-color: #468f24;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
 .delete-comment{
+    border: #4b4443;
+    margin-bottom: 10px;
     cursor: pointer;
     color: #e74c3c;
 }

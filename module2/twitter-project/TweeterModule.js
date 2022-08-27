@@ -1,5 +1,27 @@
-const logic = function () {
-  let DATA = []; // STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
+const TweeterModule = function () {
+  let DATA = [
+    {
+      text: "First post!",
+      key: "p1",
+      comments: [
+        { id: "c1", text: "First comment on first post!" },
+        { id: "c2", text: "Second comment on first post!!" },
+        { id: "c3", text: "Third comment on first post!!!" },
+      ],
+    },
+    {
+      text: "Aw man, I wanted to be first",
+      key: "p2",
+      comments: [
+        {
+          id: "c4",
+          text: "Don't wory second poster, you'll be first one day.",
+        },
+        { id: "c5", text: "Yeah, believe in yourself!" },
+        { id: "c6", text: "Haha second place what a joke." },
+      ],
+    },
+  ]; // STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
 
   // Adding a post by a given string.
   const addPost = function (str) {
@@ -57,9 +79,9 @@ const logic = function () {
   };
 
   // print data
-  const getData = function () {
+  const getPosts = function () {
     try {
-      console.log(DATA);
+      return DATA;
     } catch (error) {
       console.error(error);
     }
@@ -70,26 +92,6 @@ const logic = function () {
     addComment: addComment,
     removePost: removePost,
     removeComment: removeComment,
-    getData: getData,
+    getPosts: getPosts,
   };
 };
-
-const factory = logic();
-
-// STRUCT --> [{key: "", text: "", comments: [{key:"", text:""}, ....]}, ...]
-const renderPosts = function (DATA) {
-  // append posts:
-  DATA;
-};
-
-let postCopy = $(`<div class="postBox" id="${post.key}">
-<div class="textPostBox">
-  <p>${post.text}</p>
-</div>
-<div class="commentsPostBox"></div>
-<div class="buttonsPostBox">
-  <button>Delete Post</button>
-  <button>Add Comment</button>
-</div>
-</div>;
-`);

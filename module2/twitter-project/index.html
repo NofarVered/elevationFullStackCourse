@@ -11,16 +11,40 @@
   </head>
 
   <body>
+
     <div id="container">
       <h1 id="title">Tweeter</h1>
       <input type="text" placeholder="What's on your mind?" id="input" />
       <div id="post" onclick="post()">Twit</div>
-      <div id="posts"></div>
-    </div>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="utils.js"></script>
+
+      <script id="post-template" type="text/x-handlebars-template">
+            {{#each DATA}}
+              <div class=post data-id={{id}}>
+                <p class=post-text> {{text}} </p>
+                <div class=comments>
+                  {{#each comments}}  
+                <div style="display: flex;" data-id={{id}}>
+                    <button class=delete-comment> X </button>
+                    <p class=comment-text> {{text}} </p>
+                </div>
+                {{/each}}
+                </div>
+                <button class=delete>Delete Post</button>
+                <button class=add>Add Comment</button>
+              </div>`
+            {{/each}}
+      </script>  
+
+        <div id="posts"></div>
+
+   </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="TweeterModule.js"></script>
+    <script src="TweeterRender.js"></script>
+    <script src="main.js"></script>      
+
   </body>
 </html>
