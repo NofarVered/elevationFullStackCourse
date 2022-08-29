@@ -69,7 +69,7 @@ const TweeterModule = function () {
   // print data
   const getPosts = function () {
     try {
-      return DATA;
+      return [...DATA];
     } catch (error) {
       console.error(error);
     }
