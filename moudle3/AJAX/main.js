@@ -61,3 +61,27 @@ const fetchThree = function (queryType, queryValue) {
 };
 
 //4
+const gif = function (input) {
+  let apiKey = "X59hT9vdUQ5ng9OnNCEELabQU9BHedDx";
+
+  const url = `https://api.giphy.com/v1/gifs/search?q=${input}&api_key=${apiKey}`;
+  $.ajax({
+    method: "GET",
+    url: url,
+    success: function (response) {
+      $("#gif").attr("src", response.data[0].embed_url);
+    },
+    error: function (xhr, text, error) {
+      alert("error !");
+    },
+  });
+};
+
+gif("pig");
+
+//5
+$("button").on("click", function () {
+  const inputSearch = $("input").val();
+  gif(inputSearch);
+  $("input").val("");
+});
