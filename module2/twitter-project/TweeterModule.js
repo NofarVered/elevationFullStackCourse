@@ -1,14 +1,5 @@
 const TweeterModule = function () {
-  let DATA = [
-    {
-      text: "First post!",
-      id: "p1",
-      comments: [
-        { id: "c1", text: "First comment on first post!" },
-        { id: "c2", text: "Second comment on first post!!" },
-      ],
-    },
-  ];
+  let DATA = [];
 
   // Adding a post by a given string.
   const addPost = function (str) {
@@ -52,7 +43,6 @@ const TweeterModule = function () {
 
   // Remove a comment in place.
   const removeComment = function (postKey, commentKey) {
-    console.log("hello");
     try {
       DATA.forEach((item) => {
         item.id == postKey
