@@ -66,7 +66,7 @@ const TweeterModule = function () {
     }
   };
 
-  // print data
+  // return data
   const getPosts = function () {
     try {
       return [...DATA];
