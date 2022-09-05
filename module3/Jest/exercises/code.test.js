@@ -71,3 +71,10 @@ describe("validate function", function () {
 });
 
 // Extension
+describe("check add function", function () {
+  test("check if Array.prototype.push has been called", () => {
+    const spy = jest.spyOn(Array.prototype, "push");
+    utils.add();
+    expect(spy).toHaveBeenCalled();
+  });
+});
