@@ -16,6 +16,25 @@ const simplify = function (str) {
     .join("");
 };
 
-const validate = function (arr) {};
+const validate = function (arr) {
+  if (arr.length < 1) {
+    return { error: "Need at least one boolean" };
+  }
+  let errorFactor = 0;
+  arr.forEach((element) => {
+    typeof element == "boolean" ? null : (errorFactor = 1);
+  });
+  if (errorFactor == 1) {
+    return { error: "only boolean types inside the array" };
+  }
+  const count = arr.filter(Boolean).length;
+  return count > Math.floor(arr.length / 2);
+};
 
-module.exports = { isEven, removeAtLeastOne, simplify, validate };
+//  Extension exercise
+const add = function (x, y) {
+  let stuff = [];
+  stuff.push(x, y);
+};
+
+module.exports = { isEven, removeAtLeastOne, simplify, validate, add };

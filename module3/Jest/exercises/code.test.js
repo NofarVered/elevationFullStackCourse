@@ -51,4 +51,23 @@ describe("should return a clean string without special symbols", function () {
 });
 
 // 4.
-// describe("validate function", function () {});
+describe("validate function", function () {
+  test("should return an error message when get an array witout at least one boolean", () => {
+    expect(utils.validate(["abc"])).toEqual({
+      error: "only boolean types inside the array",
+    });
+    expect(utils.validate([])).toEqual({
+      error: "Need at least one boolean",
+    });
+  });
+
+  test("more truty values than falsey", () => {
+    expect(utils.validate([true, false, true])).toBe(true);
+  });
+
+  test("more falsey values than truty", () => {
+    expect(utils.validate([true, false, false])).toBe(false);
+  });
+});
+
+// Extension
