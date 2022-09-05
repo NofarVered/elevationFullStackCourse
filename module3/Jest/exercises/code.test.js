@@ -1,5 +1,4 @@
 const utils = require("./code");
-const uuid = require("uuid");
 
 // 1.
 describe("should return true if n is even, false otherwise", function () {
