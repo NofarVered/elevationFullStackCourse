@@ -1,5 +1,4 @@
 interface Person {
-    key: string;
     fname: string;
     lname: string;
     city: string;
@@ -22,38 +21,36 @@ interface About {
 }
 
 class apiGenerator {
-    static getPerson(): Person {
-        let output:Person = { key: "", fname: "", lname: "", city: "", state: "", urlImg: "", friends: []};
-        $.get("https://randomuser.me/api/?results=5").then((data) => {
-            let currentUser=data.results[0];
-            output.key = currentUser.email; // email is a unique field
-            output.fname = currentUser.name.first;
-            output.fname = currentUser.name.first;
-            output.lname = currentUser.name.last;
-            output.city = currentUser.location.city;
-            output.state = currentUser.location.state;
-            output.urlImg = currentUser.picture.medium;
-            output.friends = data.results.splice(1);
-            console.log("End proccesing");
-          }).catch((error)=> console.error(error));
+    static async getPerson(): Promise<Person> {
+        let output:Person = { fname: "", lname: "", city: "", state: "", urlImg: "", friends: []};
+        const promise = await $.get("https://randomuser.me/api/?format=JSON&results=7");
+        let currentUser=promise.results[0];
+        output.fname = currentUser.name.first;
+        output.lname = currentUser.name.last;
+        output.city = currentUser.location.city;
+        output.state = currentUser.location.state;
+        output.urlImg = currentUser.picture.large;
+        output.friends = promise.results.splice(1);
         return output;
     }
-    static getPokemon(): Pokemon { 
+    static async getPokemon(): Promise<Pokemon> { 
         let output:Pokemon = {name:"", urlImg:""};
-        $.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 900)}`).then((res)=>{
-            output.name=res.name;
-             output.urlImg=res.sprites.front_default;
-            }).catch((error)=> console.error(error))
+        const randomId = Math.floor(Math.random() * 900);
+        const promise =await $.get(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+        output.name= promise.name;
+        output.urlImg=promise.sprites.front_default;
         return output;
     }
-    static getQuote(): Quote {
+    static async getQuote(): Promise<Quote> {
         let output: Quote = {text: ""};
-        $.get("https://api.kanye.rest").then((res)=>{output.text=res.quote}).catch((error)=> console.error(error))
+        const promise = await $.get("https://api.kanye.rest");
+        output.text=promise.quote;
         return output;
     }
-    static getAbout(): About {
+    static async getAbout(): Promise<About> {
         let output: About = {text: ""};
-        $.get("https://baconipsum.com/api/?type=all-meat&paras=1").then((res)=>{output.text=res[0]}).catch((error)=> console.error(error))
+        const promise = await $.get("https://baconipsum.com/api/?type=all-meat&paras=1");
+        output.text=promise[0];
         return output;
     }
 }

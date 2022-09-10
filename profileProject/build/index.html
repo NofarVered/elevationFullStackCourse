@@ -22,27 +22,30 @@
 
       <script id="friends-template" type="text/x-handlebars-template">
         <ul>
-            {{#each friends}}
-                <li class="friends">{{this}}</li>
+            {{#each friendsList}}
+                <li>{{name.title}} {{name.first}} {{name.last}}</li>
             {{/each}}
         </ul>
       </script>
 
       <script id="quote-template" type="text/x-handlebars-template">
-        <h3 class="quote-title">Favorite Quote</h3>
-        <h4 class="quote-text"> {{text}}</h4>
+        <h4 class="quote-text"> "" ... {{text}} ..."" </h4>
       </script>
 
       <script id="pokemon-template" type="text/x-handlebars-template">
         <div class="pokemon">
             <h4 class="pokemon-title"> {{name}} </h4>
-            <img src={{urlImg}}>
+            <img src={{urlImg}} class="rounded">
         </div>
       </script>
 
       <script id="user-template" type="text/x-handlebars-template">
         <div class="user">
-            <img src={{urlImg}} class="img-circle" alt="Cinque Terre" width="250" height="236">
+            <img src={{urlImg}}  class="img-circle"
+            alt="Cinque Terre"
+            width="250"
+            height="236"
+    >
             <h1 class="user-name" style="font-weight: bold"> {{fname}} {{lname}} </h2>
             <h3 class="user-location"> {{city}}, {{state}} </h4>
         </div>
@@ -52,9 +55,9 @@
     <div class="jumbotron text-center">
       <div id="user-div"></div>
       <div id="about-div"></div>
-      <button type="button" class="btn btn-danger">Save</button>
-      <button type="button" class="btn btn-danger">Load</button>
-      <button type="button" class="btn btn-danger">Generate</button>
+      <button type="button" class="btn btn-danger" id="btn-g">Generate</button>
+      <button type="button" class="btn btn-danger" id="btn-s">Save</button>
+      <button type="button" class="btn btn-danger" id="btn-l">Load</button>
     </div>
 
     <div class="container">
@@ -88,9 +91,11 @@
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="scripts/utils.js"></script>
     <script src="scripts/model.js"></script>
-    <script src="scripts/render.js"></script>
+    <script src="scripts/view.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

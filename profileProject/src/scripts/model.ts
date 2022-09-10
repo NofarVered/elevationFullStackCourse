@@ -1,15 +1,19 @@
 class Model {
-    private user: Person;
-    private pokemon: Pokemon;
-    private quote: Quote;
-    private about: About;
+    user: Person | any;
+    pokemon: Pokemon | any;
+    quote: Quote | any;
+    about: About | any;
     
     constructor(){
-        this.pokemon=apiGenerator.getPokemon();
-        this.quote=apiGenerator.getQuote();
-        this.about=apiGenerator.getAbout();
-        this.user=apiGenerator.getPerson();
+        this.user = undefined;
+        this.quote = undefined;
+        this.pokemon = undefined;
+        this.about = undefined;
+    }
+    async generate(){
+        this.user = await apiGenerator.getPerson();
+        this.quote = await apiGenerator.getQuote();
+        this.pokemon = await apiGenerator.getPokemon();
+        this.about = await apiGenerator.getAbout();
     }
 }
-
-// console.log(new Model())
