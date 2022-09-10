@@ -14,7 +14,6 @@ $("#btn-s").on("click", function(){
 
 $("#btn-l").on("click", function(){
     const users = JSON.parse(localStorage["usersData"]);
-    console.log(users)
     users.forEach((element:any) => {
         View.renderNames(element);
     });

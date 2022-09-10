@@ -8,6 +8,7 @@ class View{
     }
     
     static renderNames(data:Model):void{
+        $("#dropdown-div").empty();
         let source = $("#dropdown-template").html();
         let template = Handlebars.compile(source);
         $("#dropdown-div").append(template(data));
