@@ -1,12 +1,10 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const utils_1 = require("./utils");
 class Model {
     constructor() {
-        this.user = utils_1.apiGenerator.getPerson();
-        this.pokemon = utils_1.apiGenerator.getPokemon();
-        this.quote = utils_1.apiGenerator.getQuote();
-        this.about = utils_1.apiGenerator.getAbout();
+        this.pokemon = apiGenerator.getPokemon();
+        this.quote = apiGenerator.getQuote();
+        this.about = apiGenerator.getAbout();
+        this.user = apiGenerator.getPerson();
     }
 }
-// console.log(new Model());
+console.log(new Model());

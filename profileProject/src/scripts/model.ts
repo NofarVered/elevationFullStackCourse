@@ -1,5 +1,3 @@
-import {Person, Pokemon, Quote, About, apiGenerator} from './utils'
-
 class Model {
     private user: Person;
     private pokemon: Pokemon;
@@ -7,11 +5,11 @@ class Model {
     private about: About;
     
     constructor(){
-        this.user=apiGenerator.getPerson();
         this.pokemon=apiGenerator.getPokemon();
         this.quote=apiGenerator.getQuote();
         this.about=apiGenerator.getAbout();
+        this.user=apiGenerator.getPerson();
     }
 }
 
-// console.log(new Model());
+console.log(new Model())
