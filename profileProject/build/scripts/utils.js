@@ -2,17 +2,17 @@
 class apiGenerator {
     static getPerson() {
         let output = { key: "", fname: "", lname: "", city: "", state: "", urlImg: "", friends: [] };
-        $.get("https://randomuser.me/api/?results=3").then((data) => {
+        $.get("https://randomuser.me/api/?results=5").then((data) => {
             let currentUser = data.results[0];
-            output.key = currentUser.email;
+            output.key = currentUser.email; // email is a unique field
             output.fname = currentUser.name.first;
             output.fname = currentUser.name.first;
             output.lname = currentUser.name.last;
             output.city = currentUser.location.city;
             output.state = currentUser.location.state;
             output.urlImg = currentUser.picture.medium;
-            output.friends = [];
-            console.log(data);
+            output.friends = data.results.splice(1);
+            console.log("End proccesing");
         }).catch((error) => console.error(error));
         return output;
     }

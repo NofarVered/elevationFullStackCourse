@@ -7,4 +7,4 @@ class Model {
         this.user = apiGenerator.getPerson();
     }
 }
-console.log(new Model());
+// console.log(new Model())

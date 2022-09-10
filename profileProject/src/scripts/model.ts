@@ -12,4 +12,4 @@ class Model {
     }
 }
 
-console.log(new Model())
+// console.log(new Model())

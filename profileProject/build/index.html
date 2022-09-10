@@ -12,19 +12,45 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
+
+    <!-- ============================ TEMPLETE SCRIPTS ============================ -->
+      <script id="about-template" type="text/x-handlebars-template">
+          <div class="aboutMe">
+              <p class="aboutMe-text" style="font-style: italic; font-weight: lighter"> {{paragraph}} </p>
+          </div>
+      </script>
+
+      <script id="friends-template" type="text/x-handlebars-template">
+        <ul>
+            {{#each friends}}
+                <li class="friends">{{this}}</li>
+            {{/each}}
+        </ul>
+      </script>
+
+      <script id="quote-template" type="text/x-handlebars-template">
+        <h3 class="quote-title">Favorite Quote</h3>
+        <h4 class="quote-text"> {{text}}</h4>
+      </script>
+
+      <script id="pokemon-template" type="text/x-handlebars-template">
+        <div class="pokemon">
+            <h4 class="pokemon-title"> {{name}} </h4>
+            <img src={{imgUrl}}>
+        </div>
+      </script>
+
+      <script id="user-template" type="text/x-handlebars-template">
+        <div class="user">
+            <img src={{urlImg}} class="img-circle" alt="Cinque Terre" width="250" height="236">
+            <h1 class="user-name" style="font-weight: bold"> {{firstName}} {{lastName}} </h2>
+            <h3 class="user-location"> {{city}}, {{state}} </h4>
+        </div>
+    </script>
+    <!-- ============================ TEMPLETE SCRIPTS ============================ -->
+
     <div class="jumbotron text-center">
-      <img
-        src="dog.png"
-        class="img-circle"
-        alt="Cinque Terre"
-        width="250"
-        height="236"
-      />
-      <h1 style="font-weight: bold">Nofar Nahum</h1>
-      <h3>Tel Aviv, Israel</h3>
-      <p style="font-style: italic; font-weight: lighter">
-        Resize this responsive page to see the effect!
-      </p>
+      <div id="user-div"></div>
       <button type="button" class="btn btn-danger">Save</button>
       <button type="button" class="btn btn-danger">Load</button>
       <button type="button" class="btn btn-danger">Generate</button>
@@ -36,35 +62,25 @@
           <h3 style="text-decoration: underline; font-weight: bold">
             My Friends
           </h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
+          <div id="friends-div"></div>
         </div>
 
         <div class="col-sm-4">
           <h3 style="text-decoration: underline; font-weight: bold">
             Favorite Pokemon
           </h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
+          <div id="pokemon-div"></div>
         </div>
 
         <div class="col-sm-4">
           <h3 style="text-decoration: underline; font-weight: bold">
             Favorite Quote
           </h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
+          <div id="quote-div"></div>
         </div>
+
       </div>
+
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
