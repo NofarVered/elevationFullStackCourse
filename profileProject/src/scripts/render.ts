@@ -9,4 +9,3 @@
     // PokeAPI
     // Bacon Ipsum API
 // }
-$.get("https://randomuser.me/api/?results=7").then((res)=>{console.log(res)}).catch((error)=> console.error(error))
