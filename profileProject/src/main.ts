@@ -13,6 +13,7 @@ $("#btn-s").on("click", function(){
 })
 
 $("#btn-l").on("click", function(){
+    $("#dropdown-div").empty();
     const users = JSON.parse(localStorage["usersData"]);
     users.forEach((element:any) => {
         View.renderNames(element);
