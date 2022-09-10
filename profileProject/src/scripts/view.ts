@@ -6,6 +6,13 @@ class View{
         this.renderQuote(defultUser.quote);
         this.renderPerson(defultUser.user);
     }
+    
+    static renderNames(data:Model):void{
+        let source = $("#dropdown-template").html();
+        let template = Handlebars.compile(source);
+        $("#dropdown-div").append(template(data));
+    }
+
     static clean():void {
         $("#friends-div").empty();
         $("#user-div").empty();

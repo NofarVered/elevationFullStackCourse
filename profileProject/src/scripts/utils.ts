@@ -1,4 +1,5 @@
 interface Person {
+    key: string;
     fname: string;
     lname: string;
     city: string;
@@ -22,9 +23,10 @@ interface About {
 
 class apiGenerator {
     static async getPerson(): Promise<Person> {
-        let output:Person = { fname: "", lname: "", city: "", state: "", urlImg: "", friends: []};
+        let output:Person = { key: "", fname: "", lname: "", city: "", state: "", urlImg: "", friends: []};
         const promise = await $.get("https://randomuser.me/api/?format=JSON&results=7");
         let currentUser=promise.results[0];
+        output.key = currentUser.email; //assumption - email is a unique field
         output.fname = currentUser.name.first;
         output.lname = currentUser.name.last;
         output.city = currentUser.location.city;

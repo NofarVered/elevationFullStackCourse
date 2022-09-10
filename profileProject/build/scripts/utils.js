@@ -11,9 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 class apiGenerator {
     static getPerson() {
         return __awaiter(this, void 0, void 0, function* () {
-            let output = { fname: "", lname: "", city: "", state: "", urlImg: "", friends: [] };
+            let output = { key: "", fname: "", lname: "", city: "", state: "", urlImg: "", friends: [] };
             const promise = yield $.get("https://randomuser.me/api/?format=JSON&results=7");
             let currentUser = promise.results[0];
+            output.key = currentUser.email; //assumption - email is a unique field
             output.fname = currentUser.name.first;
             output.lname = currentUser.name.last;
             output.city = currentUser.location.city;

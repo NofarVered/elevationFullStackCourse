@@ -7,6 +7,11 @@ class View {
         this.renderQuote(defultUser.quote);
         this.renderPerson(defultUser.user);
     }
+    static renderNames(data) {
+        let source = $("#dropdown-template").html();
+        let template = Handlebars.compile(source);
+        $("#dropdown-div").append(template(data));
+    }
     static clean() {
         $("#friends-div").empty();
         $("#user-div").empty();
