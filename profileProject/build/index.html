@@ -16,7 +16,7 @@
     <!-- ============================ TEMPLETE SCRIPTS ============================ -->
       <script id="about-template" type="text/x-handlebars-template">
           <div class="aboutMe">
-              <p class="aboutMe-text" style="font-style: italic; font-weight: lighter"> {{paragraph}} </p>
+              <p class="aboutMe-text" style="font-style: italic; font-weight: lighter"> {{text}} </p>
           </div>
       </script>
 
@@ -36,14 +36,14 @@
       <script id="pokemon-template" type="text/x-handlebars-template">
         <div class="pokemon">
             <h4 class="pokemon-title"> {{name}} </h4>
-            <img src={{imgUrl}}>
+            <img src={{urlImg}}>
         </div>
       </script>
 
       <script id="user-template" type="text/x-handlebars-template">
         <div class="user">
             <img src={{urlImg}} class="img-circle" alt="Cinque Terre" width="250" height="236">
-            <h1 class="user-name" style="font-weight: bold"> {{firstName}} {{lastName}} </h2>
+            <h1 class="user-name" style="font-weight: bold"> {{fname}} {{lname}} </h2>
             <h3 class="user-location"> {{city}}, {{state}} </h4>
         </div>
     </script>
@@ -51,6 +51,7 @@
 
     <div class="jumbotron text-center">
       <div id="user-div"></div>
+      <div id="about-div"></div>
       <button type="button" class="btn btn-danger">Save</button>
       <button type="button" class="btn btn-danger">Load</button>
       <button type="button" class="btn btn-danger">Generate</button>
@@ -89,7 +90,7 @@
     ></script>
     <script src="scripts/utils.js"></script>
     <script src="scripts/model.js"></script>
-    <!-- <script src="render.js"></script>
-    <script src="main.js"></script> -->
+    <script src="scripts/render.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
