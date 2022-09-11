@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tweeter</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Balthazar"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <div id="container">
+      <h1 id="title">Tweeter</h1>
+    <div style="display: flex;"> 
+         <input type="text" placeholder="What's on your mind?" id="post-input" />
+        <button id="post">Twit</button>
+    </div>
+
+      <script id="post-template" type="text/x-handlebars-template">
+            {{#each DATA}}
+              <div class="post" data-id={{id}}>
+                <button class="delete">X</button>
+                <p class="post-text"> {{text}} </p>
+                <div class="comments">
+                  {{#each comments}}  
+                    <div style="display: flex;" data-id={{id}}>
+                        <button class="delete-comment"> X </button>
+                        <p class="comment-text"> {{text}} </p>
+                    </div>
+                  {{/each}}
+                  <button class="add">Add Comment</button>
+                  <input class="comment-input" type=text placeholder="Write your comments here">  
+                </div>
+              </div>
+            {{/each}}
+      </script>  
+
+      <div id="posts"></div>
+
+   </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="TweeterModule.js"></script>
+    <script src="TweeterRender.js"></script>
+    <script src="main.js"></script>      
+
+  </body>
+</html>
