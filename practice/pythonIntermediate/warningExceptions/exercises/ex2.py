@@ -1,15 +1,8 @@
-user_id = 3058
-bonus_months = 3
+def get_list_element(my_list, index):
+    try:
+        print(my_list[index])
+    except IndexError as exp:
+        print(f'Error is {exp} ')
 
-user_months = {
-    1552: 18,
-    7021: 2,
-    532: 12,
-    3058: 9,
-    1102: 4
-}
 
-print("Giving user " + str(user_id) + " an extra " +
-      str(bonus_months) + " month bonus")
-user_months[user_id] += bonus_months
-print(user_months[user_id])
+get_list_element([1, 2, 3], 6)

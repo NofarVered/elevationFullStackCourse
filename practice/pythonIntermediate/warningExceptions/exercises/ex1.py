@@ -1,19 +1,9 @@
-state = "France"
+import math
 
-heads_of_states = {
-    "Italy": {
-        "president": "Sergio Mattarella",
-        "prime minister": "Giuseppe Conte"
-    },
-    "India": {
-        "president": "Ram Nath Kovind",
-        "prime minister": "Narendra Modi"
-    },
-    "France": {
-        "president": "Emmanuel Macron",
-        "prime minister": "Edouard Philippe"
-    }
-}
-
-print("The president of", state, "is",
-      heads_of_states[state]["president"], "the prime minister is", heads_of_states[state]["prime minister"])
+try:
+    dividend = float(input("Enter the dividend: "))
+    divisor = float(input("Enter the divisor: "))
+    quotient = dividend/divisor
+    print(math.floor(quotient))
+except Exception as exp:
+    print(f'Error is {exp}')
