@@ -1,0 +1,4 @@
+- iterator, which is an object that allows you to go through all of its items.
+- When the iterator has no more elements it will throw a StopIteration Error.
+- An iterator is an object representing a stream of data. 
+- Technically speaking, Python iterator objects must implement two special methods, __iter__() and __next__(), collectively called the iterator protocol.
