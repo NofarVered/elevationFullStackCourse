@@ -17,6 +17,3 @@ def buy_item(self, user_input=None):
         print(
             f"Congratulations, you've just bought {item_name}. There are {item_inventroy} left now in the store")
     return res
-
-
-print(get_price())
