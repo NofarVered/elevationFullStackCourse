@@ -13,6 +13,11 @@ def route():
     return "Server is running"
 
 
+@app.get('/sanity')
+def sanity():
+    return "Server is up and running smoothly"
+
+
 @app.get("/price/{name}")
 async def price_handler(name):
     try:

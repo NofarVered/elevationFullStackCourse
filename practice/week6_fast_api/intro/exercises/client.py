@@ -11,9 +11,7 @@ def buy_item(self, user_input=None):
     user_input = input("pick a furniture by his name:")
     res = requests.get(
         'http://localhost:8000/buy/{}'.format(user_input)).json()
-    item_name = res["name"]
-    item_inventroy = res["inventory"]
-    if item_inventroy != None:
+    if res["inventory"] != None:
         print(
-            f"Congratulations, you've just bought {item_name}. There are {item_inventroy} left now in the store")
+            "Congratulations, you've just bought {0}. There are {1} left now in the store".format(res["name"], res["inventory"]))
     return res
