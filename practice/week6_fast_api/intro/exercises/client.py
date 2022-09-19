@@ -1,4 +1,6 @@
 import requests
+import sched
+import time
 
 
 def get_price(furniture):
@@ -21,3 +23,18 @@ def customer_process(money=0):
     if price == None or money < int(price):
         raise Exception("Sorry, an error occurred")
     buy_item(furniture)
+
+
+def chair_for_less(s, previos_price):
+    price = get_price("chair")["price"]
+    if previos_price != None and price < previos_price:
+        requests.get("http://localhost:8000/buy/chair").json()
+        print("bought a chair for less")
+    else:
+        print("still waiting for a price drop...")
+        s.enter(3, 1, chair_for_less, (s, None))
+
+
+s = sched.scheduler(time.time, time.sleep)
+s.enter(3, 1, chair_for_less, (s, None))
+s.run()
