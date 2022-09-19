@@ -23,7 +23,7 @@ def customer_process(money=0):
     if price == None or money < int(price):
         return("Sorry, an error occurred")
     buy_item(furniture)
-    return("customer process succeed")
+    return("customer process succeeded")
 
 
 def chair_for_less(s, previos_price):
