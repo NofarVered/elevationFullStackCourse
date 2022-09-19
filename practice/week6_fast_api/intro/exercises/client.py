@@ -21,8 +21,9 @@ def customer_process(money=0):
     furniture = input("pick a furniture by his name:")
     price = get_price(furniture)["price"]
     if price == None or money < int(price):
-        raise Exception("Sorry, an error occurred")
+        return("Sorry, an error occurred")
     buy_item(furniture)
+    return("customer process succeed")
 
 
 def chair_for_less(s, previos_price):
