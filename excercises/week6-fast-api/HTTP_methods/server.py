@@ -39,7 +39,6 @@ async def add_sentence(request: Request):
     new_words = 0
     old_words = len(data)
     words_list = [word for word in sentence.split(" ")]
-    # to do 4 and 5
     return {"text": f"Added {new_words} words, {old_words} already existed"}
 
 

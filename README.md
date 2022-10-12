@@ -4,5 +4,5 @@
 
 1. function intermidiate
 2. git branch video
-3. web sec video woth Alon
+3. web sec video with Alon
 4. pytests
